@@ -1,0 +1,104 @@
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03_Full64; Runtime version I-2014.03_Full64;  Jul 27 17:17 2017
+----------------------------------------------------------------
+UVM-1.1d.VCS
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer I-2014.03_Full64 Copyright (c) 1991-2014 by Synopsys Inc.
+The design has assertions or cover properties.
+The assertion browser can be used to view them. Click on the assertion toolbar button or use the menu 'Window->Panes->Assertion' to open it.
+The file '/home/SIBIZAPPS/sdimitrov/Projects/lampTest/comp/inter.vpd' was opened successfully.
+UVM_INFO @ 0: reporter [RNTST] Running test my_test...
+UVM_INFO /opt/synopsys/vcs-mx/I-2014.03/etc/uvm-1.1/src/base/uvm_objection.svh(1268) @ 315: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    2
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+$finish called from file "/opt/synopsys/vcs-mx/I-2014.03/etc/uvm-1.1/src/base/uvm_root.svh", line 438.
+$finish at simulation time                  315
+Simulation complete, time is 315 ps.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 315 ps
+CPU Time:      1.200 seconds;       Data structure size:   0.3Mb
+Thu Jul 27 17:22:19 2017
+Warning: [DVIT111] 
+The design was not compiled with stack debug option.
+Stack debugging cannot be supported for Stack and Local Panes.
+To enable stack debugging capabilities, please compile the design with option
+'-debug_access+object+thread', '-debug_access+all', or '-debug_all'.
+For more information please refer the VCS user guide.
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03_Full64; Runtime version I-2014.03_Full64;  Jul 27 17:22 2017
+----------------------------------------------------------------
+UVM-1.1d.VCS
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+VCD+ Writer I-2014.03_Full64 Copyright (c) 1991-2014 by Synopsys Inc.
+The file '/home/SIBIZAPPS/sdimitrov/Projects/lampTest/comp/inter.vpd' was opened successfully.
+UVM_INFO @ 0: reporter [RNTST] Running test my_test...
+UVM_INFO /opt/synopsys/vcs-mx/I-2014.03/etc/uvm-1.1/src/base/uvm_objection.svh(1268) @ 315: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    2
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+$finish called from file "/opt/synopsys/vcs-mx/I-2014.03/etc/uvm-1.1/src/base/uvm_root.svh", line 438.
+$finish at simulation time                  315
+Simulation complete, time is 315 ps.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 315 ps
+CPU Time:      1.210 seconds;       Data structure size:   0.3Mb
+Thu Jul 27 17:22:49 2017
+Warning: [DVIT111] 
+The design was not compiled with stack debug option.
+Stack debugging cannot be supported for Stack and Local Panes.
+To enable stack debugging capabilities, please compile the design with option
+'-debug_access+object+thread', '-debug_access+all', or '-debug_all'.
+For more information please refer the VCS user guide.
