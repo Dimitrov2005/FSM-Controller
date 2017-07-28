@@ -12,6 +12,8 @@ package pack;
 `include "env_config.svh"
 `include "Environment.svh"
 `include "randSeq.svh"
+`include "personIn.svh"
+`include "personOut.svh"
 `include "test.svh"
  
 endpackage:pack

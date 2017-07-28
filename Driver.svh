@@ -17,7 +17,7 @@ class Driver extends uvm_driver #(Transaction);
       forever
 	begin
    
-	   wait(viface.rst==1);
+	 //  wait(viface.rst==0);
 	   seq_item_port.get_next_item(tr);
 	   @(posedge viface.clk)
 	       begin   
@@ -25,6 +25,13 @@ class Driver extends uvm_driver #(Transaction);
 		  viface.x2<=tr.x2;
 		  viface.cs<=tr.cs;
 	       end
+	   @(posedge viface.clk)
+	     begin
+		viface.x1=0;
+		viface.x2=0;
+		viface.cs<=tr.cs;
+	     end
+	   
 	   seq_item_port.item_done();
 	end //
    endtask // run_phase

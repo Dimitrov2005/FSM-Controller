@@ -3,6 +3,8 @@ class my_test extends uvm_test;
      Environment env;
    env_config env_cfg;
    agent_config agent_cfg;
+   personIn personIn_h;
+   personOut personOut_h;
    randSeq randSeq_h;
    
    function new(string name, uvm_component parent);
@@ -35,11 +37,17 @@ class my_test extends uvm_test;
   task run_phase(uvm_phase phase);
 	 
      randSeq_h=randSeq::type_id::create("randSeq_h",this);
-     
+      personIn_h=personIn::type_id::create("personIn_h",this);
+      personOut_h=personOut::type_id::create("personOut_h",this);
      //override    
      //randSeq_h.num=500;
-     phase.raise_objection(this);     
-     randSeq_h.start(env.agent.seq);    
+     phase.raise_objection(this);
+     repeat(32)
+    
+     personIn_h.start(env.agent.seq);
+     
+     personOut_h.start(env.agent.seq);
+     
      phase.drop_objection(this);
    endtask
 

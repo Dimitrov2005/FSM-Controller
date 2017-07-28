@@ -18,6 +18,7 @@ module top;
 	clk=0;
 	rst=0;
 	#1ps rst=1;
+	#2ps rst=0;
 	
      end
   

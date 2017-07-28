@@ -3,7 +3,7 @@ class Scoreboard extends uvm_scoreboard;
    `uvm_component_utils(Scoreboard)
 
      uvm_tlm_analysis_fifo#(Transaction) fifo;
-   bit [7:0] cnt;
+   byte cnt;
    Transaction tr;
 
    function new(string name, uvm_component parent);
@@ -20,61 +20,27 @@ class Scoreboard extends uvm_scoreboard;
       forever 
 	begin
 	   tr=new("tr");
-	   fifo.get(tr);	   
-	   else if(tr.x1==1)begin
-	      pushFull(tr);
-	   `uvm_info("TRWREQ","+++++++ WREQ - %h ++++++", UVM_MEDIUM);	 
-	      end
-	   else if(tr.RREQ==1) begin
-	      `uvm_info("TRRREQ",$sformatf("+++++++ RREQ - %h ++++++",tr.RD),UVM_MEDIUM);
-	      popEmpt(tr);
-	   end
-	   
+	   fifo.get(tr);
+	   check_fsm(tr.x1,tr.x2)
 	end 
    endtask // run 
 
-   function void pushFull(Transaction tr); 
-      if((tr.WREQ===1'bx))q.delete();
-      if(tr.full==0)
-	begin 
-	   q.push_front(tr.WD);   
-	   $display("------SCB TRANS REC  %h qsize= %d--------",tr.WD,q.size());
-	end
-     else if((q.size()!=256) ~^ (tr.full))
-	begin	  
-	   `uvm_warning("SCBF",$sformatf("--FIFO FULL ERROR :: fullFifo %b, Qsize : %d :------",tr.full,q.size()));
-	   countm++;
-	end
-      else 
-      // overwrite logic
-      if((tr.full)&&(tr.WREQ))
+   function void check_fsm(bit x1, bit x2);
+      bit s1=1,s2=0,s3=0;
+      if(x1)
 	begin
-	   q[(q.size())-1]=(tr.WD);
-	   `uvm_warning("SCBOW",$sformatf("--------OVERWRITE, qdatatoadd =%h ------",tr.WD));
+	   s1=0;
+	   s2=1;
+	   s3=0;
 	end
+      else  if(x2)
+	begin
+	   s1=0;s2=
+	end
+      
+      
+endfunction // check_fsm
    
-   endfunction // pushFull
-
-   function void popEmpt(Transaction tr);
-       if((tr.RREQ===1'bx))q.delete();
-     if((tr.empty)&&(tr.RREQ))
-	begin
-	   `uvm_warning("SCBRWE","--------READ WHILE EMPTY ERROR ------");
-	end
-      
-      i=q.pop_back(); 
-     if(tr.RD!=i)
-	begin
-	   `uvm_warning("SCBD",$sformatf("--------Data Mismatch fifo:%h q:%h ------",tr.RD, i));
-	   countm++;
-	end
-      else  if((q.size()!=0)&&(tr.empty))
-	begin
-	   `uvm_warning("SCBE","--------FIFO EMPTY ERROR------");
-	   countm++;   
-	end
-      
-   endfunction // popEmpt
 
    
    function void report_phase(uvm_phase phase);
